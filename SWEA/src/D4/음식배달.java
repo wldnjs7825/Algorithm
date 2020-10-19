@@ -1,13 +1,10 @@
 package D4;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Scanner;
 
-//r,c는 1부터 시작
 //조합
-//bfs
+
 public class 음식배달 {
 	static int N,min;
 	static int[][] map;
@@ -23,19 +20,10 @@ public class 음식배달 {
 			this.price = price;
 		}
 	}
-	
-	static class Node{
-		int r;
-		int c;
-		public Node(int r, int c) {
-			this.r = r;
-			this.c = c;
-		}
-	}
-	
+		
 	static int[] dr = {-1,1,0,0};
 	static int[] dc = {0,0,-1,1};
-	static boolean[][] visited;
+
 	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -69,9 +57,17 @@ public class 음식배달 {
 	private static void comb(int idx, int storeCnt) {
 		if(idx == storeCnt) {
 		
-			//선택한 집으로 최소비용 찾기(bfs)
-			visited = new boolean[N][N];
-			bfs();
+			//선택한 집으로 최소비용 찾기
+			
+			//선택된 가계가 없으면 계산할 필요 x
+			boolean st = false;
+			for(int i=0; i<list.size(); i++) {
+				if(result[i])
+					st = true;
+			}
+			
+			if(st)
+				calDist();
 			
 			return;
 		}
@@ -84,9 +80,9 @@ public class 음식배달 {
 		
 	}
 
-	private static void bfs() {
+	private static void calDist() {
 		int sum = 0;
-		boolean flag = false;
+	
 		//선택된 가게 비용 더하기
 		for(int i=0; i<list.size(); i++) {
 			if(result[i]) {
@@ -109,7 +105,6 @@ public class 음식배달 {
 						//선택된 가계면은 거리를 계산
 						if(result[i]) {
 							st = true;
-							flag = true;
 							int dist = Math.abs(list.get(i).r - r)+Math.abs(list.get(i).c - c);
 							minDist = Math.min(minDist, dist);
 						}
@@ -129,20 +124,9 @@ public class 음식배달 {
 					map[r][c] =1;
 			}
 		}
-		if (flag) {
-			// min값 수정
-			min = Math.min(min, sum);
-		}
-	}
-
-	private static void print() {
-		for(int r=0; r<N; r++) {
-			for(int c=0; c<N; c++) {
-				System.out.print(map[r][c]+" ");
-			}
-			System.out.println();
-		}
 		
+		// min값 수정
+		min = Math.min(min, sum);
+	
 	}
-
 }
