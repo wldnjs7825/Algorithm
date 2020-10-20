@@ -111,9 +111,7 @@ public class 청소년상어 {
 		//상어가 먹을 물고기가있는지 없는치 체크할 변수
 		boolean moveSt = false;
 		int[][] originMap = smap;
-		System.out.println("---------------------");
-		print(originMap);
-		System.out.println("---------------------");
+		
 		for(int dist=1; dist<=3; dist++) {
 			int nr = sr+dr[sd]*dist;
 			int nc = sc+dc[sd]*dist;
