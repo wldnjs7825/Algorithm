@@ -1,6 +1,7 @@
+package 실버5;
 import java.util.Scanner;
 
-public class 실버5 {
+public class 달팽이 {
 	static int N,target;
 	static int[][] map;
 	//이동방향 순서는 상 우 하 좌
