@@ -1,6 +1,11 @@
 package 정렬;
 import java.util.*;
 // 6 4 1 7 3 9 8
+/**
+ * 삽입정렬
+ * @author wldnj
+ * 정렬되지 않은 것 중 첫번째 값을 정렬된 데이터에서 알맞은 위치에 삽입
+ */
 public class 삽입정렬{
 	static int[] arr;
 	

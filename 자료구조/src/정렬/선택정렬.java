@@ -1,6 +1,11 @@
 package 정렬;
 import java.util.*;
-
+/**
+ * 선택정렬
+ * @author wldnj
+ * 인덱스 0부터 시작
+ * 정렬되지 않은 원소 중 가장 작은 값이랑 인덱스 위치랑 교환
+ */
 public class 선택정렬{
 	static int[] arr;
 	
