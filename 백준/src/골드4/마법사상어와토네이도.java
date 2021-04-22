@@ -37,8 +37,8 @@ public class 마법사상어와토네이도 {
 
 			// 거리만큼 이동
 			for (int i = 0; i < dist; i++) {
-				nr += dr[d];
-				nc += dc[d];
+				nr += dr[d]; 
+				nc += dc[d]; 
 
 				// 모래 이동
 				if (nr >= 0 && nc >= 0 && nr < N && nc < N) {
@@ -55,26 +55,20 @@ public class 마법사상어와토네이도 {
 				d = 0;
 			}
 		}
-		int sum = 0;
-		for(int r=0; r<N; r++) {
-			for(int c=0; c<N; c++) {
-				sum += map[r][c];
-			}
-		}
 		
 		System.out.println(sandSum);
 	}
 
 	// x좌표가 매개변수
 	private static void moveSand(int r, int c, int sand, int d) {
-		int sum = 0;
-		int outSum = 0;
+		int sum = 0; //이동한 모래의 합 , 나가지 않은
+		int outSum = 0; //이동했는데 나간 모래의 합
 		int dir1 = 0;
 		int dir2 = 0;
-		if(d == 0 || d== 2) {
+		if(d == 0 || d== 2) { //좌 우
 			dir1 = 3; //상
 			dir2 = 1; //하
-		}else {
+		}else { //
 			dir1 = 0; //좌
 			dir2 = 2; //우
 		}
