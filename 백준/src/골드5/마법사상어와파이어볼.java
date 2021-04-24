@@ -128,10 +128,10 @@ public class 마법사상어와파이어볼 {
 	private static void move_ball(Ball ball) {
 		int nr = ball.r;
 		int nc = ball.c;
-		nr = (nr + dr[ball.d] * ball.s - 1) % N + 1;
+		nr = (nr+dr[ball.d]*ball.s)%N; //이게 내가만든식
 		if (nr <= 0)
 			nr = N + nr;
-		nc = (nc + dc[ball.d] * ball.s - 1) % N + 1;
+		nc = (nc+dc[ball.d]*ball.s)%N;
 		if (nc <= 0)
 			nc = N + nc;
 
