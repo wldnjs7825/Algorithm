@@ -17,6 +17,7 @@ public class N°úM5 {
 		result = new int[M];
 		visited = new boolean[N];
 		sb = new StringBuilder();
+		
 			
 		for(int i=0; i<N; i++) {
 			num[i] = sc.nextInt();			
