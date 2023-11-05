@@ -1,4 +1,4 @@
-package 브론즈5;
+package Bronze5;
 
 public class 고양이 {
 
